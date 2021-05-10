@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/components/main_panel_card.dart';
 import 'package:restaurant_app/constants.dart';
 
 class MainPanel extends StatefulWidget {
-
   static String id = 'main_panel_screen';
 
   @override
@@ -13,24 +13,42 @@ class _MainPanelState extends State<MainPanel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[300],
       appBar: AppBar(
         backgroundColor: Colors.pink,
-        title: Text('Main Panel', style: kAppBarTextStyle,),
+        title: Text(
+          'Main Panel',
+          style: kAppBarTextStyle,
+        ),
       ),
-      body: ListView(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 250.0, left: 20.0, right: 20.0),
-              child: Text(
-                'restaurant main panel is going to be here.',
-                style: TextStyle(
-                  fontSize: 35.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(child: Main_panel_card(label: 'food menu editor',)),
+              ],
             ),
-          )
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(child: Main_panel_card(label: 'comments manager',)),
+                Expanded(child: Main_panel_card(label: 'orders',)),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(child: Main_panel_card(label: 'reports',)),
+                Expanded(child: Main_panel_card(label: 'delivery district',)),
+
+              ],
+            ),
+          ),
         ],
       ),
     );
