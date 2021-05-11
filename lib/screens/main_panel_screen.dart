@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/components/main_panel_card.dart';
 import 'package:restaurant_app/constants.dart';
+import 'package:restaurant_app/screens/comments_manager_screen.dart';
+import 'package:restaurant_app/screens/current_orders_screen.dart';
+import 'package:restaurant_app/screens/reports_screen.dart';
+import 'package:restaurant_app/screens/restaurant_menu_screen.dart';
+import 'package:koukicons/editDoc.dart';
+import 'package:koukicons/comments.dart';
+import 'package:koukicons/paid.dart';
+import 'package:koukicons/archive3.dart';
+import 'package:koukicons/mapLocation.dart';
 
 class MainPanel extends StatefulWidget {
   static String id = 'main_panel_screen';
@@ -28,23 +37,49 @@ class _MainPanelState extends State<MainPanel> {
           Expanded(
             child: Row(
               children: [
-                Expanded(child: Main_panel_card(label: 'food menu editor',)),
+                Expanded(
+                  child: Main_panel_card(
+                    label: 'food menu',
+                    icon: KoukiconsEditDoc(),
+                    destination: RestaurantMenuScreen.id,
+                  ),
+                ),
               ],
             ),
           ),
           Expanded(
             child: Row(
               children: [
-                Expanded(child: Main_panel_card(label: 'comments manager',)),
-                Expanded(child: Main_panel_card(label: 'orders',)),
+                Expanded(
+                    child: Main_panel_card(
+                  label: 'comments section',
+                  icon: KoukiconsComments(),
+                  destination: CommentsManagerScreen.id,
+                )),
+                Expanded(
+                    child: Main_panel_card(
+                  label: 'current orders',
+                  icon: KoukiconsPaid(),
+                  destination: CurrentOrdersScreen.id,
+                )),
               ],
             ),
           ),
           Expanded(
             child: Row(
               children: [
-                Expanded(child: Main_panel_card(label: 'reports',)),
-                Expanded(child: Main_panel_card(label: 'delivery district',)),
+                Expanded(
+                    child: Main_panel_card(
+                  label: 'reports',
+                  icon: KoukiconsArchive3(),
+                  destination: ReportsScreen.id,
+                )),
+                Expanded(
+                    child: Main_panel_card(
+                  label: 'delivery district',
+                  icon: KoukiconsMapLocation(),
+                  // TODO delivery district.
+                )),
               ],
             ),
           ),
