@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Padding(
               padding:
-              const EdgeInsets.only(left: 20.0, right: 20.0, top: 50.0),
+                  const EdgeInsets.only(left: 20.0, right: 20.0, top: 50.0),
               child: TextFormField(
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -59,7 +59,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
                 controller: phoneNumberController,
-                obscureText: _passwordInvisibility,
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   hintText: 'Enter your phone number',
@@ -104,32 +103,32 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             Padding(
-                padding:
-                const EdgeInsets.only(top: 60.0, left: 20.0, right: 20.0),
-                child: RawMaterialButton(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  constraints: BoxConstraints.tightFor(
-                    width: 250.0,
-                    height: 50.0,
-                  ),
-                  // shape: CircleBorder(),
-                  fillColor: Colors.pink,
-                  onPressed: () {
-                    if (_formKey.currentState.validate()) {
-                      Navigator.pushNamed(context, MainPanel.id);
-                    }
-                  },
-                  child: Text(
-                    'Login',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25.0,
-                    ),
+              padding:
+                  const EdgeInsets.only(top: 60.0, left: 20.0, right: 20.0),
+              child: RawMaterialButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                constraints: BoxConstraints.tightFor(
+                  width: 250.0,
+                  height: 50.0,
+                ),
+                // shape: CircleBorder(),
+                fillColor: Colors.pink,
+                onPressed: () {
+                  if (_formKey.currentState.validate()) {
+                    Navigator.pushNamed(context, MainPanel.id);
+                  }
+                },
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25.0,
                   ),
                 ),
+              ),
             ),
           ],
         ),

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:restaurant_app/objects/RestaurantArray.dart';
 
 class NavigatorTextButton extends StatelessWidget {
-  NavigatorTextButton(
-      {@required this.text,
-      @required this.destination,
-      this.users,
-      });
+  NavigatorTextButton({
+    @required this.text,
+    @required this.destination,
+    this.users,
+  });
 
   final String text;
   final String destination;
@@ -25,7 +25,7 @@ class NavigatorTextButton extends StatelessWidget {
       // shape: CircleBorder(),
       fillColor: Colors.pink,
       onPressed: () {
-          Navigator.pushNamed(context, destination);
+        Navigator.pushNamed(context, destination);
       },
       child: Text(
         text,
