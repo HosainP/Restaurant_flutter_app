@@ -45,7 +45,6 @@ class _MainPanelState extends State<MainPanel> {
               children: [
                 Expanded(child: Main_panel_card(label: 'reports',)),
                 Expanded(child: Main_panel_card(label: 'delivery district',)),
-
               ],
             ),
           ),

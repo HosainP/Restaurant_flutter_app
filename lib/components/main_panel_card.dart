@@ -27,20 +27,22 @@ class _Main_panel_cardState extends State<Main_panel_card> {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // Image.asset('images/hamburger.jpg'),
-            Center(
-              child: Text(
-                this.label,
-                style: TextStyle(
-                  fontSize: 25.0,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              // Image.asset('images/hamburger.jpg'),
+              Center(
+                child: Text(
+                  this.label,
+                  style: TextStyle(
+                    fontSize: 25.0,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
         margin: EdgeInsets.all(10.0),
         decoration: BoxDecoration(

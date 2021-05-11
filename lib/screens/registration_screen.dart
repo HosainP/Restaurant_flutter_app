@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/components/FoodCategoryFormField.dart';
 import 'package:restaurant_app/components/MyTextField.dart';
 import 'package:restaurant_app/components/NavigatorTextButton.dart';
 import 'package:restaurant_app/constants.dart';
@@ -92,6 +93,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
           ),
           //TODO location field should be added.
+          // Padding(
+          //   padding: const EdgeInsets.only(left: 20.0, right: 20.0),
+          //   child: FoodCategoryFormField(),
+          // ), // TODO food category form field.
           Padding(
             padding: const EdgeInsets.fromLTRB(20.0, 30.0, 20.0, 10.0),
             child: NavigatorTextButton(text: 'Register', destination: MainPanel.id),

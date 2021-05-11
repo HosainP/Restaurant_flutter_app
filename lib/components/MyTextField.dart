@@ -34,6 +34,7 @@ class _MyTextFieldState extends State<MyTextField> {
         icon: icon,
         hintText: hintText,
         labelText: labelText,
+        // suffix: Icon(Icons.text_fields),
       ),
     );
   }
