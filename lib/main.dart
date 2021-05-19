@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/screens/comments_manager_screen.dart';
 import 'package:restaurant_app/screens/current_orders_screen.dart';
+import 'package:restaurant_app/screens/food_details_screen.dart';
 import 'package:restaurant_app/screens/login_screen.dart';
 import 'package:restaurant_app/screens/main_panel_screen.dart';
 import 'package:restaurant_app/screens/registration_screen.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         CommentsManagerScreen.id: (context) => CommentsManagerScreen(),
         CurrentOrdersScreen.id: (context) => CurrentOrdersScreen(),
         ReportsScreen.id: (context) => ReportsScreen(),
+        FoodDetailsScreen.id: (context) => FoodDetailsScreen(),
       },
     );
   }

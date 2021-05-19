@@ -24,7 +24,7 @@ class _MainPanelState extends State<MainPanel> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
-        backgroundColor: Colors.pink,
+        backgroundColor: kMainColor,
         title: Text(
           'Main Panel',
           style: kAppBarTextStyle,

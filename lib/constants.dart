@@ -4,3 +4,5 @@ const  kAppBarTextStyle = TextStyle(
   fontSize: 20.0,
   fontWeight: FontWeight.bold,
 );
+
+const kMainColor = Colors.pink;

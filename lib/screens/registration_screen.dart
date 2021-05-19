@@ -27,7 +27,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.pink,
+        backgroundColor: kMainColor,
         title: Text(
           'this is the registration screen',
           style: kAppBarTextStyle,

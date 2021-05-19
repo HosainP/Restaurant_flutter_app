@@ -17,7 +17,7 @@ class Welcome_screen extends StatelessWidget {
           'food ordering app',
           style: kAppBarTextStyle,
         ),
-        backgroundColor: Colors.pink,
+        backgroundColor: kMainColor,
       ),
       body: Center(
         child: Column(

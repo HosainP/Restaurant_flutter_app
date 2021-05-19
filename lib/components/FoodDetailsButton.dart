@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/constants.dart';
-import 'package:restaurant_app/objects/RestaurantArray.dart';
 
-class NavigatorTextButton extends StatelessWidget {
-  NavigatorTextButton({
-    @required this.text,
-    @required this.destination,
-    this.users,
-  });
+class FoodDetailsButton extends StatefulWidget {
+  @override
+  _FoodDetailsButtonState createState() => _FoodDetailsButtonState();
+}
 
-  final String text;
-  final String destination;
-  RestaurantArray users;
-
+class _FoodDetailsButtonState extends State<FoodDetailsButton> {
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
@@ -20,22 +14,22 @@ class NavigatorTextButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
       ),
       constraints: BoxConstraints.tightFor(
-        width: 250.0,
-        height: 50.0,
+        width: 100.0,
+        height: 25.0,
       ),
       // shape: CircleBorder(),
       fillColor: kMainColor,
       onPressed: () {
-        Navigator.pushNamed(context, destination);
+        Navigator.pushNamed(context, 'destination'); //TODO
       },
       child: Text(
-        text,
+        'Details',
         style: TextStyle(
           color: Colors.white,
-          fontWeight: FontWeight.bold,
-          fontSize: 25.0,
+          fontSize: 15.0,
         ),
       ),
     );
   }
 }
+

@@ -14,7 +14,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.pink,
+        backgroundColor: kMainColor,
         title: Text(
           'this is reports screen',
           style: kAppBarTextStyle,

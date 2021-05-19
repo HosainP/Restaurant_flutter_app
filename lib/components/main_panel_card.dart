@@ -34,6 +34,8 @@ class _Main_panel_cardState extends State<Main_panel_card> {
                   this.label,
                   textAlign: TextAlign.center,
                   style: TextStyle(
+                    fontFamily: 'Ubuntu',
+                    fontWeight: FontWeight.bold,
                     fontSize: 25.0,
                   ),
                 ),

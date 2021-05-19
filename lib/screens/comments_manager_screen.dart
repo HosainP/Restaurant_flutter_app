@@ -12,7 +12,7 @@ class _CommentsManagerScreenState extends State<CommentsManagerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.pink,
+        backgroundColor: kMainColor,
         title: Text(
           'this is comments manager screen',
           style: kAppBarTextStyle,

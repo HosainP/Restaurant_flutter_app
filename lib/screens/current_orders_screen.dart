@@ -13,7 +13,7 @@ class _CurrentOrdersScreenState extends State<CurrentOrdersScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.pink,
+        backgroundColor: kMainColor,
         title: Text(
           'this is current orders screen',
           style: kAppBarTextStyle,
