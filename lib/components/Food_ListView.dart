@@ -28,7 +28,7 @@ class _FoodListViewState extends State<FoodListView> {
                 borderRadius: BorderRadius.circular(30),
                 color: Colors.grey.shade300,
               ),
-              height: 170.0,
+              height: 190.0,
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,6 +49,11 @@ class _FoodListViewState extends State<FoodListView> {
                         ),
                         Text(
                           '${foods[index].details}',
+                          style: TextStyle(
+                              fontSize: 15, color: Colors.grey.shade900),
+                        ),
+                        Text(
+                          'price : ${foods[index].price}',
                           style: TextStyle(
                               fontSize: 15, color: Colors.grey.shade900),
                         ),
