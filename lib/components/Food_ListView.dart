@@ -67,19 +67,21 @@ class _FoodListViewState extends State<FoodListView> {
                                   setState(() {
                                     foods[index].isAvailable = value;
                                   });
-                                })
+                                }),
                           ],
                         ),
-                        FoodDetailsButton(),
+                        FoodDetailsButton(food: foods[index],),
                       ],
                     ),
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(30),
-                    child: Image.asset('images/kebab.jpg'),
+                    child: Image.asset('images/kebab.jpg'), //todo image should be per food
                   ),
                 ],
               ));
         });
   }
 }
+
+// todo if the name was to long, then the image would not be completely in screen.

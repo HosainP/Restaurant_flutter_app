@@ -114,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 50.0,
                 ),
                 // shape: CircleBorder(),
-                fillColor: Colors.pink,
+                fillColor: kMainColor,
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
                     Navigator.pushNamed(context, MainPanel.id);

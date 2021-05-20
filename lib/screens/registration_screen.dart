@@ -161,7 +161,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   height: 50.0,
                 ),
                 // shape: CircleBorder(),
-                fillColor: Colors.pink,
+                fillColor: kMainColor,
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
                     Navigator.pushNamed(context, MainPanel.id);

@@ -13,13 +13,14 @@ class RestaurantMenuScreen extends StatefulWidget {
 
 class _RestaurantMenuScreenState extends State<RestaurantMenuScreen> {
   List<Food> foods = <Food>[
-    Food(name: 'food', details: 'detailsOfFood', price: 123, isAvailable: true),
-    Food(name: 'food', details: 'detailsOfFood', price: 123, isAvailable: true),
-    Food(name: 'food', details: 'detailsOfFood', price: 123, isAvailable: true),
-    Food(name: 'food', details: 'detailsOfFood', price: 123, isAvailable: true),
-    Food(name: 'food', details: 'detailsOfFood', price: 123, isAvailable: true),
-    Food(name: 'food', details: 'detailsOfFood', price: 123, isAvailable: true),
-    Food(name: 'food', details: 'detailsOfFood', price: 123, isAvailable: true),
+    Food(name: 'Kebab1', details: 'details of the food', price: '100000', isAvailable: true, image: 'images/kebab.jpg'),
+    Food(name: 'Kebab2', details: 'details of the food', price: '200000', isAvailable: true, image: 'images/kebab.jpg'),
+    Food(name: 'Kebab3', details: 'details of the food', price: '300000', isAvailable: true, image: 'images/kebab.jpg'),
+    Food(name: 'Kebab4', details: 'details of the food', price: '400000', isAvailable: true, image: 'images/kebab.jpg'),
+    Food(name: 'Kebab5', details: 'details of the food', price: '500000', isAvailable: true, image: 'images/kebab.jpg'),
+    Food(name: 'Kebab6', details: 'details of the food', price: '600000', isAvailable: true, image: 'images/kebab.jpg'),
+    Food(name: 'Kebab7', details: 'details of the food', price: '700000', isAvailable: true, image: 'images/kebab.jpg'),
+
   ];
 
   @override

@@ -6,3 +6,4 @@ const  kAppBarTextStyle = TextStyle(
 );
 
 const kMainColor = Colors.pink;
+
