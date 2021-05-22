@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/components/Comment_ListView.dart';
 import 'package:restaurant_app/constants.dart';
+import 'package:restaurant_app/objects/Comment.dart';
 
 class CommentsManagerScreen extends StatefulWidget {
   static String id = 'comments_manager_screen';
@@ -8,6 +10,14 @@ class CommentsManagerScreen extends StatefulWidget {
 }
 
 class _CommentsManagerScreenState extends State<CommentsManagerScreen> {
+
+  List<Comment> comments = <Comment>[
+    Comment(comment: 'food is good', answer: '', isChecked: false, rate: 5 , sender: 'Hosain Pishgahi'),
+    Comment(comment: 'food is not bad', answer: 'this is the answer 2', isChecked: true, rate: 4  , sender: 'Hosain Pishgahi'),
+    Comment(comment: 'food is not good', answer: 'this is the answer 3', isChecked: false, rate: 3 , sender: 'Hosain Pishgahi'),
+    Comment(comment: 'food is awesome', answer: 'this is the answer 4', isChecked: true, rate:  2 , sender: 'Hosain Pishgahi'),
+    Comment(comment: 'food is awful', answer: 'this is the answer 5', isChecked: false, rate: 1 , sender: 'Hosain Pishgahi'),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,14 +28,9 @@ class _CommentsManagerScreenState extends State<CommentsManagerScreen> {
           style: kAppBarTextStyle,
         ),
       ),
-      body: Center(
-        child: Text(
-          'this is comments section',
-          style: TextStyle(
-            fontSize: 25.0,
-          ),
-        ),
-      ),
+      body: Container(
+          child: CommentListView(comments: comments,),
+      )
     );
   }
 }
