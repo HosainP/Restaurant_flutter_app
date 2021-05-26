@@ -38,34 +38,35 @@ class _AnswerCommentButtonState extends State<AnswerCommentButton> {
       onTap: () => showDialog<String>(
         context: context,
         builder: (BuildContext context) => AlertDialog(
-            title: Text('${comment.comment}'),
-            content: Form(
-              key: _formKey,
-              child: Padding(
-                padding: EdgeInsets.all(15.0),
-                child: TextFormField(
-                  controller: AnswerController,
-                  decoration: InputDecoration(
-                    labelText: 'Answer',
-                    hintText: 'Answer this comment',
-                    border: OutlineInputBorder(),
-                  ),
+          title: Text('${comment.comment}'),
+          content: Form(
+            key: _formKey,
+            child: Padding(
+              padding: EdgeInsets.all(15.0),
+              child: TextFormField(
+                controller: AnswerController,
+                decoration: InputDecoration(
+                  labelText: 'Answer',
+                  hintText: 'Answer this comment',
+                  border: OutlineInputBorder(),
                 ),
               ),
             ),
-            actions: <Widget>[
-              TextButton(
-                onPressed: () {
-                  comment.answer = AnswerController.text;
-                  AnswerController.clear();
-                  Navigator.pop(context, 'OK');
-                },
-                child: const Text('OK'),
-              ),
-            ],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(30.0),
-            )),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                comment.answer = AnswerController.text;
+                AnswerController.clear();
+                Navigator.pop(context, 'OK');
+              },
+              child: const Text('OK'),
+            ),
+          ],
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+        ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,

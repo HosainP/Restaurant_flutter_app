@@ -5,6 +5,6 @@ const  kAppBarTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
-const kMainColor = Colors.orange;
+const kMainColor = Colors.pink;
 
 const double kButtonComponentRadius = 10.0;
