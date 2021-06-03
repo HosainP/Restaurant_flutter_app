@@ -13,7 +13,7 @@ class CurrentOrdersScreen extends StatefulWidget {
 
 class _CurrentOrdersScreenState extends State<CurrentOrdersScreen> {
   List<Order> orders = <Order>[
-    Order(
+    new Order(
       foods: [
         new Food(
           name: 'food1',
@@ -40,32 +40,31 @@ class _CurrentOrdersScreenState extends State<CurrentOrdersScreen> {
       user: 'Saeid 1',
       numberOfFood: [1, 2, 3, 4],
     ),
-    Order(
+    new Order(
       foods: [
         new Food(
             name: 'food1',
             price: '1000',
-            details: 'Details1 -_-',
+            details: 'Details 1 -_-',
             isAvailable: true),
         new Food(
             name: 'food2',
             price: '2000',
-            details: 'Details2 -_-',
+            details: 'Details 2 -_-',
             isAvailable: true),
         new Food(
             name: 'food3',
             price: '3000',
-            details: 'Details3 -_-',
+            details: 'Details 3 -_-',
             isAvailable: true),
         new Food(
             name: 'food4',
             price: '4000',
-            details: 'Detail4 -_-',
+            details: 'Details 4 -_-',
             isAvailable: true),
       ],
       user: 'Saeid 2',
       numberOfFood: [5, 6, 7, 8],
-
     )
   ];
 

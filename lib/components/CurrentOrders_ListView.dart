@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/components/Cart_ListView.dart';
 import 'package:restaurant_app/objects/Order.dart';
 import 'package:restaurant_app/constants.dart';
 
@@ -48,33 +49,28 @@ class _CurrentOrdersListViewState extends State<CurrentOrdersListView> {
                       ),
                     ],
                   ),
-
-                  // ListView.builder(
-                  //     itemCount: orders[index].foods.length,
-                  //     itemBuilder: (BuildContext context, int index2) {
-                  //       return Container(
-                  //         color: Colors.white,
-                  //         child: Text(
-                  //           orders[index].foods[index2].name,
-                  //         ),
-                  //       );
-                  //     })
-
+                  // CartListView(
+                  //   foods: orders[index].foods,
+                  //   numberOfFood: orders[index].numberOfFood,
+                  // ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10.0),
                     child: Center(
                       child: Text(
-                        'list of foods will go here',
+                        'list of foods will go here\n\n1\n2\n3',
                         style: TextStyle(
                           fontSize: 25.0,
                         ),
                       ),
                     ),
                   ),
-
                   Center(
                     child: Text(
                       orders[index].isDelivered ? '' : 'Preparing the food...',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.0,
+                      ),
                     ),
                   ),
                   Row(
@@ -94,6 +90,7 @@ class _CurrentOrdersListViewState extends State<CurrentOrdersListView> {
                               color: orders[index].isDelivered
                                   ? Colors.white
                                   : kMainColor,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                           decoration: BoxDecoration(
