@@ -49,18 +49,11 @@ class _CurrentOrdersListViewState extends State<CurrentOrdersListView> {
                       ),
                     ],
                   ),
-                  // CartListView(
-                  //   foods: orders[index].foods,
-                  //   numberOfFood: orders[index].numberOfFood,
-                  // ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10.0),
                     child: Center(
-                      child: Text(
-                        'list of foods will go here\n\n1\n2\n3',
-                        style: TextStyle(
-                          fontSize: 25.0,
-                        ),
+                      child: CartListView(
+                        foods: orders[index].foods,
                       ),
                     ),
                   ),

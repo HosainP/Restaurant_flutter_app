@@ -1,12 +1,11 @@
+import 'package:restaurant_app/objects/FoodArray.dart';
+import 'package:restaurant_app/objects/FoodInCart.dart';
 import 'Food.dart';
 
 class Order {
+  Order({this.foods, this.user});
 
-  Order({this.foods, this.user, this.numberOfFood});
-
-  List<Food> foods;
-  List<int> numberOfFood;
+  List<FoodInCart> foods;
   String user = '';
   bool isDelivered = false;
-
 }

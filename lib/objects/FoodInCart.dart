@@ -2,9 +2,9 @@ import 'package:restaurant_app/objects/Food.dart';
 
 class FoodInCart {
 
-  FoodInCart({this.food});
+  FoodInCart({this.food, this.count});
 
   Food food;
-  int count = 1;
+  int count = 19;
 
 }

@@ -1,49 +1,50 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:restaurant_app/objects/FoodInCart.dart';
-import 'package:restaurant_app/objects/Order.dart';
-import 'package:restaurant_app/objects/Food.dart';
 
 class CartListView extends StatefulWidget {
-  CartListView({this.foods, this.numberOfFood});
+  CartListView({@required this.foods});
 
-  List<Food> foods;
-  List<int> numberOfFood;
+  List<FoodInCart> foods;
 
   @override
-  _CartListViewState createState() => _CartListViewState(foods: foods, numberOfFood: numberOfFood);
+  _CartListViewState createState() => _CartListViewState(
+        foods: foods,
+      );
 }
 
 class _CartListViewState extends State<CartListView> {
+  _CartListViewState({this.foods});
 
-  _CartListViewState({this.foods, this.numberOfFood});
-
-  List<Food> foods;
-  List<int> numberOfFood;
-
-  // void foodListProvider(Order order) {
-  //   for (int i = 0; i < order.foods.length; i++) {
-  //     foods[i].food = order.foods[i];
-  //     foods[i].count = order.numberOfFood[i];
-  //   }
-  // }
+  List<FoodInCart> foods;
 
   @override
   Widget build(BuildContext context) {
-
-    // foodListProvider(order);
-
     return ListView.builder(
+        shrinkWrap: true,
         itemCount: foods.length,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            child: Row(
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: Column(
               children: [
-                Text(
-                  foods[index].name,
-                ),
-                Text(
-                  numberOfFood[index].toString(),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 3.0),
+                      child: Text(
+                        (index + 1).toString() +
+                            '. ' +
+                            foods[index].food.name +
+                            '   #' +
+                            foods[index].count.toString(),
+                        // 5.toString(),
+                        style: TextStyle(
+                          fontSize: 20.0,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
