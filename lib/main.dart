@@ -6,8 +6,8 @@ import 'package:restaurant_app/screens/food_details_screen.dart';
 import 'package:restaurant_app/screens/login_screen.dart';
 import 'package:restaurant_app/screens/main_panel_screen.dart';
 import 'package:restaurant_app/screens/registration_screen.dart';
-import 'package:restaurant_app/screens/reports_screen.dart';
 import 'package:restaurant_app/screens/restaurant_menu_screen.dart';
+import 'package:restaurant_app/screens/reports_main_screen.dart';
 import 'screens/welcome_screen.dart';
 
 void main() {
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         RestaurantMenuScreen.id: (context) => RestaurantMenuScreen(),
         CommentsManagerScreen.id: (context) => CommentsManagerScreen(),
         CurrentOrdersScreen.id: (context) => CurrentOrdersScreen(),
-        ReportsScreen.id: (context) => ReportsScreen(),
+        ReportsMainScreen.id: (context) => ReportsMainScreen(),
         // FoodDetailsScreen.id: (context) => FoodDetailsScreen(), //didn't work and i don't know why.
       },
     );
