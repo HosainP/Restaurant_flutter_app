@@ -6,6 +6,9 @@ import 'package:restaurant_app/screens/food_details_screen.dart';
 import 'package:restaurant_app/screens/login_screen.dart';
 import 'package:restaurant_app/screens/main_panel_screen.dart';
 import 'package:restaurant_app/screens/registration_screen.dart';
+import 'package:restaurant_app/screens/reportsScreens/today_reports_screen.dart';
+import 'package:restaurant_app/screens/reportsScreens/total_orders_screen.dart';
+import 'package:restaurant_app/screens/reportsScreens/total_reports_screen.dart';
 import 'package:restaurant_app/screens/restaurant_menu_screen.dart';
 import 'package:restaurant_app/screens/reports_main_screen.dart';
 import 'screens/welcome_screen.dart';
@@ -29,6 +32,10 @@ class MyApp extends StatelessWidget {
         CommentsManagerScreen.id: (context) => CommentsManagerScreen(),
         CurrentOrdersScreen.id: (context) => CurrentOrdersScreen(),
         ReportsMainScreen.id: (context) => ReportsMainScreen(),
+        TotalOrdersScreen.id: (context) => TotalOrdersScreen(),
+        TotalReportsScreen.id: (context) => TotalReportsScreen(),
+        TodayReportsScreen.id: (context) => TodayReportsScreen(),
+
         // FoodDetailsScreen.id: (context) => FoodDetailsScreen(), //didn't work and i don't know why.
       },
     );

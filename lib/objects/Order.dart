@@ -8,4 +8,9 @@ class Order {
   List<FoodInCart> foods;
   String user = '';
   bool isDelivered = false;
+  int price;
+  int code;
+  String date = 'this is the date';
+
+  // DateTime date = DateTime.now();
 }
