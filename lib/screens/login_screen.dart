@@ -66,6 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   icon: Icon(Icons.phone),
                   border: OutlineInputBorder(),
                 ),
+                maxLength: 11,
               ),
             ),
             SizedBox(

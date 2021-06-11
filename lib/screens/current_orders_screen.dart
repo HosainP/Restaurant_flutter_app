@@ -95,15 +95,16 @@ class _CurrentOrdersScreenState extends State<CurrentOrdersScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: kMainColor,
-          title: Text(
-            'this is current orders screen',
-            style: kAppBarTextStyle,
-          ),
+      appBar: AppBar(
+        backgroundColor: kMainColor,
+        title: Text(
+          'this is current orders screen',
+          style: kAppBarTextStyle,
         ),
-        body: Container(
-          child: CurrentOrdersListView(orders: orders),
-        ));
+      ),
+      body: Container(
+        child: CurrentOrdersListView(orders: orders),
+      ),
+    );
   }
 }

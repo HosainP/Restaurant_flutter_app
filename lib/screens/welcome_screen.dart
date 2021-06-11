@@ -12,18 +12,30 @@ class Welcome_screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'food ordering app',
-          style: kAppBarTextStyle,
-        ),
-        backgroundColor: kMainColor,
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     'food ordering app',
+      //     style: kAppBarTextStyle,
+      //   ),
+      //   backgroundColor: kMainColor,
+      // ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            Padding(
+              padding: const EdgeInsets.all(45.0),
+              child: Text(
+                'My Restaurant',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Ubuntu',
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40.0,
+                ),
+              ),
+            ),
             CircleAvatar(
               radius: 100.0,
               backgroundImage: AssetImage('images/hamburger.jpg'),
@@ -47,6 +59,20 @@ class Welcome_screen extends StatelessWidget {
           ],
         ),
       ),
+    bottomNavigationBar: BottomAppBar(
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
+          child: Text(
+              '© Hosain Pishgahi and Saeid Zare',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Ubuntu',
+              fontWeight: FontWeight.bold,
+              fontSize: 15.0,
+            ),
+          ),
+        ),
+    ),
     );
   }
 }

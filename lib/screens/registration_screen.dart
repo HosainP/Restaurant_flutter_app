@@ -111,6 +111,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   icon: Icon(Icons.phone),
                   border: OutlineInputBorder(),
                 ),
+                maxLength: 11,
               ),
             ),
             SizedBox(

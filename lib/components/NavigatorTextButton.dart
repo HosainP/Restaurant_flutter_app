@@ -30,9 +30,11 @@ class NavigatorTextButton extends StatelessWidget {
       },
       child: Text(
         text,
+        textAlign: TextAlign.center,
         style: TextStyle(
           color: Colors.white,
-          fontWeight: FontWeight.bold,
+          fontFamily: 'Ubuntu',
+          // fontWeight: FontWeight.bold,
           fontSize: 25.0,
         ),
       ),
