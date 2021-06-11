@@ -29,21 +29,29 @@ class _CartListViewState extends State<CartListView> {
             child: Column(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 3.0),
                       child: Text(
                         (index + 1).toString() +
                             '. ' +
-                            foods[index].food.name +
-                            '   #' +
-                            foods[index].count.toString(),
-                        // 5.toString(),
+                            foods[index].food.name,
                         style: TextStyle(
                           fontSize: 20.0,
+                          fontFamily: 'Ubuntu',
+                          // fontWeight: FontWeight.bold,
                         ),
                       ),
                     ),
+                    Text(
+                      '#'+ foods[index].count.toString(),
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontFamily: 'Ubuntu',
+                        // fontWeight: FontWeight.bold,
+                      ),
+                    )
                   ],
                 ),
               ],

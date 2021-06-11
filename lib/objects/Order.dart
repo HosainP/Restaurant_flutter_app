@@ -5,6 +5,9 @@ import 'Food.dart';
 class Order {
   Order({this.foods, this.user, this.trackingCode, this.isDelivered}) {
     this.price = this.CalculatePrice();
+    if (this.isDelivered == null) {
+      this.isDelivered = false;
+    }
   }
 
   List<FoodInCart> foods;
@@ -13,6 +16,7 @@ class Order {
   int price;
   int trackingCode;
   String date = '1400/02/08';
+  String image = 'images/saeid.jpg';
 
   // DateTime date = DateTime.now();
 

@@ -38,13 +38,21 @@ class _CurrentOrdersListViewState extends State<CurrentOrdersListView> {
                 children: [
                   Row(
                     children: [
-                      Text(
-                        orders[index].user,
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25.0,
+                      CircleAvatar(
+                        radius: 35.0,
+                        backgroundImage: AssetImage(orders[index].image),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(30.0, 0, 0, 0),
+                        child: Text(
+                          orders[index].user,
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 30.0,
+                            fontFamily: 'Ubuntu',
+                          ),
                         ),
                       ),
                     ],
@@ -61,8 +69,9 @@ class _CurrentOrdersListViewState extends State<CurrentOrdersListView> {
                     child: Text(
                       orders[index].isDelivered ? '' : 'Preparing the food...',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
                         fontSize: 20.0,
+                        fontFamily: 'Ubuntu',
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
@@ -84,6 +93,7 @@ class _CurrentOrdersListViewState extends State<CurrentOrdersListView> {
                                   ? Colors.white
                                   : kMainColor,
                               fontWeight: FontWeight.bold,
+                              fontFamily: 'ubuntu',
                             ),
                           ),
                           decoration: BoxDecoration(

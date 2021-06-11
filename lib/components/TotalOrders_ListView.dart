@@ -41,7 +41,7 @@ class _TotalOrdersListViewState extends State<TotalOrdersListView> {
                     children: [
                       CircleAvatar(
                         radius: 35.0,
-                        backgroundImage: AssetImage('images/saeid.jpg'),
+                        backgroundImage: AssetImage(orders[index].image),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(30.0, 0, 0, 0),
