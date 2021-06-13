@@ -3,6 +3,7 @@ import 'package:restaurant_app/components/main_panel_card.dart';
 import 'package:restaurant_app/constants.dart';
 import 'package:restaurant_app/screens/comments_manager_screen.dart';
 import 'package:restaurant_app/screens/current_orders_screen.dart';
+import 'package:restaurant_app/screens/map_screen.dart';
 import 'package:restaurant_app/screens/reports_main_screen.dart';
 import 'package:restaurant_app/screens/restaurant_menu_screen.dart';
 import 'package:koukicons/editDoc.dart';
@@ -79,7 +80,7 @@ class _MainPanelState extends State<MainPanel> {
                     child: Main_panel_card(
                   label: 'delivery district',
                   icon: KoukiconsMapLocation(),
-                  // TODO delivery district.
+                  destination: MapScreen.id,
                 )),
               ],
             ),

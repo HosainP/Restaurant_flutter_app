@@ -5,6 +5,7 @@ import 'package:restaurant_app/screens/current_orders_screen.dart';
 import 'package:restaurant_app/screens/food_details_screen.dart';
 import 'package:restaurant_app/screens/login_screen.dart';
 import 'package:restaurant_app/screens/main_panel_screen.dart';
+import 'package:restaurant_app/screens/map_screen.dart';
 import 'package:restaurant_app/screens/registration_screen.dart';
 import 'package:restaurant_app/screens/reportsScreens/today_reports_screen.dart';
 import 'package:restaurant_app/screens/reportsScreens/total_orders_screen.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         TotalOrdersScreen.id: (context) => TotalOrdersScreen(),
         TotalReportsScreen.id: (context) => TotalReportsScreen(),
         TodayReportsScreen.id: (context) => TodayReportsScreen(),
+        MapScreen.id: (context) => MapScreen(),
 
         // FoodDetailsScreen.id: (context) => FoodDetailsScreen(), //didn't work and i don't know why.
       },
