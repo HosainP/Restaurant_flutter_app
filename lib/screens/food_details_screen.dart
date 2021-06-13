@@ -112,70 +112,71 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
             GestureDetector(
               onTap: () {
                 showModalBottomSheet(
-                    context: context,
-                    builder: (context) {
-                      return Form(
-                        key: _formKey,
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: ListView(
-                            children: [
-                              TextFormField(
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'food name can not be empty';
-                                  }
-                                  return null;
-                                },
-                                controller: foodNameController,
-                                // initialValue: food.name,
-                                decoration: InputDecoration(
-                                  labelText: 'Name',
-                                  border: OutlineInputBorder(),
-                                ),
+                  context: context,
+                  builder: (context) {
+                    return Form(
+                      key: _formKey,
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: ListView(
+                          children: [
+                            TextFormField(
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'food name can not be empty';
+                                }
+                                return null;
+                              },
+                              controller: foodNameController,
+                              // initialValue: food.name,
+                              decoration: InputDecoration(
+                                labelText: 'Name',
+                                border: OutlineInputBorder(),
                               ),
-                              SizedBox(
-                                height: 15.0,
+                            ),
+                            SizedBox(
+                              height: 15.0,
+                            ),
+                            TextFormField(
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'food details can not be empty';
+                                }
+                                return null;
+                              },
+                              controller: foodDetailsController,
+                              // initialValue: food.details,
+                              decoration: InputDecoration(
+                                labelText: 'Details',
+                                border: OutlineInputBorder(),
                               ),
-                              TextFormField(
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'food details can not be empty';
-                                  }
-                                  return null;
-                                },
-                                controller: foodDetailsController,
-                                // initialValue: food.details,
-                                decoration: InputDecoration(
-                                  labelText: 'Details',
-                                  border: OutlineInputBorder(),
-                                ),
+                            ),
+                            SizedBox(
+                              height: 15.0,
+                            ),
+                            TextFormField(
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'food price can not be empty';
+                                }
+                                return null;
+                              },
+                              controller: foodPriceController,
+                              // initialValue: food.price,
+                              keyboardType: TextInputType.number,
+                              decoration: InputDecoration(
+                                labelText: 'Price',
+                                border: OutlineInputBorder(),
                               ),
-                              SizedBox(
-                                height: 15.0,
-                              ),
-                              TextFormField(
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return 'food price can not be empty';
-                                  }
-                                  return null;
-                                },
-                                controller: foodPriceController,
-                                // initialValue: food.price,
-                                keyboardType: TextInputType.number,
-                                decoration: InputDecoration(
-                                  labelText: 'Price',
-                                  border: OutlineInputBorder(),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 15.0,
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  // if (_formKey.currentState.validate()) {
-                                  setState(() {
+                            ),
+                            SizedBox(
+                              height: 15.0,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                // if (_formKey.currentState.validate()) {
+                                setState(
+                                  () {
                                     if (foodNameController.text != "") {
                                       food.name = foodNameController.text;
                                     }
@@ -185,40 +186,42 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                                     if (foodPriceController.text != "") {
                                       food.price = foodPriceController.text;
                                     }
-                                  });
+                                  },
+                                );
 
-                                  foodPriceController.clear();
-                                  foodDetailsController.clear();
-                                  foodNameController.clear();
+                                foodPriceController.clear();
+                                foodDetailsController.clear();
+                                foodNameController.clear();
 
-                                  Navigator.pop(context);
-                                  // }
-                                },
-                                child: Container(
-                                  padding: EdgeInsets.symmetric(
-                                    vertical: 20.0,
-                                  ),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(30.0),
-                                    color: kMainColor,
-                                  ),
-                                  child: Center(
-                                    child: Text(
-                                      'Submit',
-                                      style: TextStyle(
-                                        fontSize: 20.0,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                Navigator.pop(context);
+                                // }
+                              },
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 20.0,
+                                ),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30.0),
+                                  color: kMainColor,
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'Submit',
+                                    style: TextStyle(
+                                      fontSize: 20.0,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                 ),
-                              )
-                            ],
-                          ),
+                              ),
+                            ),
+                          ],
                         ),
-                      );
-                    });
+                      ),
+                    );
+                  },
+                );
               },
               child: Container(
                 padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
