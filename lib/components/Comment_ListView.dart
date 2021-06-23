@@ -42,13 +42,21 @@ class _CommentListViewState extends State<CommentListView> {
                           horizontal: 20.0, vertical: 10.0),
                       child: Row(
                         children: [
-                          Text(
-                            '${comments[index].sender}',
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25.0,
+                          CircleAvatar(
+                            backgroundImage: AssetImage('images/hosain.jpg'),
+                            radius: 35.0,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(30.0, 0, 0, 0),
+                            child: Text(
+                              '${comments[index].sender}',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25.0,
+                                fontFamily: 'ubuntu'
+                              ),
                             ),
                           ),
                         ],
@@ -64,6 +72,7 @@ class _CommentListViewState extends State<CommentListView> {
                             textAlign: TextAlign.left,
                             style: TextStyle(
                               fontSize: 20.0,
+                              fontFamily: 'ubuntu'
                             ),
                           ),
                         ],
@@ -95,6 +104,7 @@ class _CommentListViewState extends State<CommentListView> {
                                   // color: Colors.white,
                                   fontSize: 15.0,
                                   fontWeight: FontWeight.bold,
+                                  fontFamily: 'ubuntu'
                                 ),
                               ),
                               Text(
@@ -103,6 +113,7 @@ class _CommentListViewState extends State<CommentListView> {
                                   // color: Colors.white,
                                   fontSize: 15.0,
                                   fontWeight: FontWeight.bold,
+                                  fontFamily: 'ubuntu'
                                 ),
                                 textAlign: TextAlign.center,
                               ),
@@ -137,6 +148,7 @@ class _CommentListViewState extends State<CommentListView> {
                                         : Colors.red,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 15.0,
+                                    fontFamily: 'ubuntu'
                                   ),
                                 ),
                                 Icon(
@@ -156,7 +168,9 @@ class _CommentListViewState extends State<CommentListView> {
                     ),
                     Container(
                       child: comments[index].answer == ''
-                          ? AnswerCommentButton(comment: comments[index],)
+                          ? AnswerCommentButton(
+                              comment: comments[index],
+                            )
                           : ShowCommentAnswerButton(comment: comments[index]),
                     )
                   ],

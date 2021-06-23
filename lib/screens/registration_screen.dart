@@ -1,7 +1,6 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/components/FoodCategoryFormField.dart';
-import 'package:restaurant_app/components/MyTextField.dart';
-import 'package:restaurant_app/components/NavigatorTextButton.dart';
 import 'package:restaurant_app/constants.dart';
 import 'package:restaurant_app/screens/main_panel_screen.dart';
 
@@ -16,10 +15,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   var _formKey = GlobalKey<FormState>();
 
   bool _passwordInvisibility = true;
-  TextEditingController nameController;
-  TextEditingController foodCategoryController;
-  TextEditingController phoneNumberController;
-  TextEditingController passwordController;
+  TextEditingController nameController = new TextEditingController();
+  TextEditingController foodCategoryController = new TextEditingController();
+  TextEditingController phoneNumberController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
   RegExp phoneRegex = new RegExp("[0-9]{10,11}");
 
   @override
@@ -79,7 +78,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   }
                   return null;
                 },
-                controller: passwordController,
+                controller: foodCategoryController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   icon: Icon(Icons.fastfood),
@@ -165,7 +164,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 fillColor: kMainColor,
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
-                    Navigator.pushNamed(context, MainPanel.id);
+                    if (!doesRestaurantExist(phoneNumberController.text)) {
+                      _Register(phoneNumberController.text, nameController.text,
+                          passwordController.text, foodCategoryController.text);
+                      Navigator.pushNamed(context, MainPanel.id);
+                    }
                   }
                 },
                 child: Text(
@@ -182,5 +185,25 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         ),
       ),
     );
+  }
+
+  bool doesRestaurantExist(String phoneNumber) {
+    // TODO , must be done!
+    return false;
+  }
+
+  void _Register(String phoneNumber, String name, String password,
+      String foodCategory) async {
+    await Socket.connect('10.0.2.2', 8080).then((serverSocket) {
+      serverSocket.writeln('hRegister'); // this is the command for the server.
+
+      serverSocket.writeln(phoneNumber); //passing by the phone number
+      serverSocket.writeln(name); //          and the name.
+      serverSocket.writeln(password); //          and the password.
+      serverSocket.writeln(foodCategory); //          and the food category.
+
+      print('information are sent.');
+      setState(() {});
+    });
   }
 }

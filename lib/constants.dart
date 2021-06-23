@@ -6,6 +6,6 @@ const  kAppBarTextStyle = TextStyle(
   fontFamily: 'ubuntu'
 );
 
-const kMainColor = Colors.pink;
+const kMainColor = Colors.orange;
 
 const double kButtonComponentRadius = 10.0;

@@ -1,7 +1,6 @@
-import 'package:flutter/foundation.dart';
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:restaurant_app/components/MyTextField.dart';
-import 'package:restaurant_app/components/NavigatorTextButton.dart';
 import 'package:restaurant_app/constants.dart';
 import 'package:restaurant_app/screens/main_panel_screen.dart';
 
@@ -16,9 +15,16 @@ class _LoginScreenState extends State<LoginScreen> {
   var _formKey = GlobalKey<FormState>();
 
   bool _passwordInvisibility = true;
-  TextEditingController phoneNumberController;
-  TextEditingController passwordController;
+  TextEditingController phoneNumberController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
   RegExp phoneRegex = new RegExp("[0-9]{10,11}");
+
+  @override
+  void dispose() {
+    phoneNumberController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +124,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 fillColor: kMainColor,
                 onPressed: () {
                   if (_formKey.currentState.validate()) {
-                    Navigator.pushNamed(context, MainPanel.id);
+                    _login(phoneNumberController.text, passwordController.text);
                   }
                 },
                 child: Text(
@@ -135,5 +141,44 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
+  }
+
+  void _login(String user, String pass) async {
+    await Socket.connect('10.0.2.2', 8080).then((serverSocket) {
+      serverSocket.writeln('hLogin'); // this is the command for the server.
+
+      serverSocket.writeln(user); //passing by the phone number
+      serverSocket.writeln(pass); //          and the password.
+
+      serverSocket.listen((socket) {
+        var ans = String.fromCharCodes(socket).trim();
+        if (ans == 'true')
+          Navigator.pushNamed(context, MainPanel.id);
+        else {
+          // ans = false
+          showDialog(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                    title: const Text(
+                      'Error',
+                      style: TextStyle(fontFamily: 'ubuntu'),
+                    ),
+                    content: const Text(
+                      'username or password is incorrect.',
+                      style: TextStyle(fontFamily: 'ubuntu'),
+                    ),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () => Navigator.pop(context, 'OK'),
+                        child: const Text('OK'),
+                      ),
+                    ],
+                  ));
+        }
+        setState(() {});
+      });
+      print('username and password are sent.');
+      setState(() {});
+    });
   }
 }

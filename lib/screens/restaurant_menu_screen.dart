@@ -22,9 +22,9 @@ class _RestaurantMenuScreenState extends State<RestaurantMenuScreen> {
 
   @override
   void initState() {
-    foodNameController = TextEditingController();
-    foodDetailsController = TextEditingController();
-    foodPriceController = TextEditingController();
+    TextEditingController foodNameController = new TextEditingController();
+    TextEditingController foodDetailsController = new TextEditingController();
+    TextEditingController foodPriceController = new TextEditingController();
     super.initState();
   }
 
@@ -133,14 +133,17 @@ class _RestaurantMenuScreenState extends State<RestaurantMenuScreen> {
                                       Row(
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 13.0),
+                                            padding: const EdgeInsets.fromLTRB(
+                                                0, 0, 0, 13.0),
                                             child: CircleAvatar(
-                                              backgroundImage: AssetImage('images/kebab.jpg'),
+                                              backgroundImage: AssetImage(
+                                                  'images/kebab.jpg'),
                                               radius: 40.0,
                                             ),
                                           ),
                                         ],
-                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
                                       ),
                                       TextFormField(
                                         validator: (value) {
