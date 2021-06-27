@@ -1,12 +1,16 @@
 class Food {
 
-  Food({this.name, this.details, this.price, this.isAvailable, this.image});
+  Food({this.name, this.details, this.price, this.isAvailable, this.image, this.numberOfSales, this.counter, this.label});
 
   String name;
   String details;
   String price;
   bool isAvailable;
   String image = 'images/kebab.jpg';
+
+  String numberOfSales;
+  String counter;
+  String label;
 
   // void setName(String name) {
   //   this._name = name;

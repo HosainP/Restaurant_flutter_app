@@ -12,5 +12,5 @@ class Comment {
   String comment;
   String answer = '';
   bool isChecked = false;
-  int rate;
+  double rate;
 }

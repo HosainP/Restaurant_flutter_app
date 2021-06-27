@@ -6,25 +6,31 @@ import 'package:restaurant_app/components/Food_ListView.dart';
 
 class RestaurantMenuScreen extends StatefulWidget {
   static String id = 'restaurant_menu_screen';
+  List<Food> foods;
+
+  RestaurantMenuScreen({this.foods});
 
   @override
-  _RestaurantMenuScreenState createState() => _RestaurantMenuScreenState();
+  _RestaurantMenuScreenState createState() => _RestaurantMenuScreenState(foods: foods);
 }
 
 class _RestaurantMenuScreenState extends State<RestaurantMenuScreen> {
   var _formKey = GlobalKey<FormState>();
+  List<Food> foods;
 
-  TextEditingController foodNameController;
-  TextEditingController foodDetailsController;
-  TextEditingController foodPriceController;
+  _RestaurantMenuScreenState({this.foods});
+
+  TextEditingController foodNameController = new TextEditingController();
+  TextEditingController foodDetailsController = new TextEditingController();
+  TextEditingController foodPriceController = new TextEditingController();
 
   Food food = new Food(name: 'unknown', details: 'unknown', price: '0000');
 
   @override
   void initState() {
-    TextEditingController foodNameController = new TextEditingController();
-    TextEditingController foodDetailsController = new TextEditingController();
-    TextEditingController foodPriceController = new TextEditingController();
+    TextEditingController foodNameController;
+    TextEditingController foodDetailsController;
+    TextEditingController foodPriceController;
     super.initState();
   }
 
@@ -36,50 +42,50 @@ class _RestaurantMenuScreenState extends State<RestaurantMenuScreen> {
     super.dispose();
   }
 
-  List<Food> foods = <Food>[
-    Food(
-        name: 'Kebab1',
-        details: 'details of the food',
-        price: '100000',
-        isAvailable: true,
-        image: 'images/kebab.jpg'),
-    Food(
-        name: 'Kebab2',
-        details: 'details of the food',
-        price: '200000',
-        isAvailable: true,
-        image: 'images/kebab.jpg'),
-    Food(
-        name: 'Kebab3',
-        details: 'details of the food',
-        price: '300000',
-        isAvailable: true,
-        image: 'images/kebab.jpg'),
-    Food(
-        name: 'Kebab4',
-        details: 'details of the food',
-        price: '400000',
-        isAvailable: true,
-        image: 'images/kebab.jpg'),
-    Food(
-        name: 'Kebab5',
-        details: 'details of the food',
-        price: '500000',
-        isAvailable: true,
-        image: 'images/kebab.jpg'),
-    Food(
-        name: 'Kebab6',
-        details: 'details of the food',
-        price: '600000',
-        isAvailable: true,
-        image: 'images/kebab.jpg'),
-    Food(
-        name: 'Kebab7',
-        details: 'details of the food',
-        price: '700000',
-        isAvailable: true,
-        image: 'images/kebab.jpg'),
-  ];
+  // List<Food> foods = <Food>[
+  //   Food(
+  //       name: 'Kebab1',
+  //       details: 'details of the food',
+  //       price: '100000',
+  //       isAvailable: true,
+  //       image: 'images/kebab.jpg'),
+  //   Food(
+  //       name: 'Kebab2',
+  //       details: 'details of the food',
+  //       price: '200000',
+  //       isAvailable: true,
+  //       image: 'images/kebab.jpg'),
+  //   Food(
+  //       name: 'Kebab3',
+  //       details: 'details of the food',
+  //       price: '300000',
+  //       isAvailable: true,
+  //       image: 'images/kebab.jpg'),
+  //   Food(
+  //       name: 'Kebab4',
+  //       details: 'details of the food',
+  //       price: '400000',
+  //       isAvailable: true,
+  //       image: 'images/kebab.jpg'),
+  //   Food(
+  //       name: 'Kebab5',
+  //       details: 'details of the food',
+  //       price: '500000',
+  //       isAvailable: true,
+  //       image: 'images/kebab.jpg'),
+  //   Food(
+  //       name: 'Kebab6',
+  //       details: 'details of the food',
+  //       price: '600000',
+  //       isAvailable: true,
+  //       image: 'images/kebab.jpg'),
+  //   Food(
+  //       name: 'Kebab7',
+  //       details: 'details of the food',
+  //       price: '700000',
+  //       isAvailable: true,
+  //       image: 'images/kebab.jpg'),
+  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -203,10 +209,12 @@ class _RestaurantMenuScreenState extends State<RestaurantMenuScreen> {
                                               .validate()) {
                                             setState(
                                               () {
-                                                // food.name = foodNameController.text;
-                                                // food.details = foodDetailsController.text;
-                                                // food.price = foodPriceController.text;
-                                                //TODO creating an object has problems
+                                                food.name =
+                                                    foodNameController.text;
+                                                food.details =
+                                                    foodDetailsController.text;
+                                                food.price =
+                                                    foodPriceController.text;
 
                                                 //TODO the food object is created by now
                                                 //TODO All you have to do is to add this food to the array

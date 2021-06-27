@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:restaurant_app/RestaurantInfo.dart';
 import 'package:restaurant_app/constants.dart';
 import 'package:restaurant_app/screens/main_panel_screen.dart';
 
@@ -151,10 +152,22 @@ class _LoginScreenState extends State<LoginScreen> {
       serverSocket.writeln(pass); //          and the password.
 
       serverSocket.listen((socket) {
-        var ans = String.fromCharCodes(socket).trim();
-        if (ans == 'true')
-          Navigator.pushNamed(context, MainPanel.id);
-        else {
+        String ans = String.fromCharCodes(socket).trim();
+        print(ans); // todo now i have the information of the restaurant as ans.
+
+        RestaurantInfo restaurantInfo = RestaurantInfo(ans);
+
+        if (ans.startsWith('true')) {
+          // Navigator.pushNamed(context, MainPanel.id);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => MainPanel(
+                restaurantInfo: restaurantInfo,
+              ),
+            ),
+          );
+        } else {
           // ans = false
           showDialog(
               context: context,
@@ -176,7 +189,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ));
         }
         setState(() {});
+        // serverSocket.close();
       });
+      // serverSocket.close();
       print('username and password are sent.');
       setState(() {});
     });
